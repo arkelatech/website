@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Development Consulting</title>
+    <style>
+        /* reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #333;
+            color: white;
+        }
+
+        /* header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 80px;
+            z-index: 5;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header nav ul {
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 1rem;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* hero section styles */
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            /* Position the pseudo-element to cover the container */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: bottom;
+            filter: blur(0px);
+            z-index: -1;
+            /* Set a negative z-index to make sure it's behind the child elements */
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* services section styles */
+
+        .serviceContainer {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            padding-top: 0;
+            background-color: rgba(30, 30, 100, 0.4);
+            color: #ffffff;
+        }
+
+        .serviceContainer::before {
+            content: '';
+            position: absolute;
+            /* Position the pseudo-element to cover the container */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('consulting.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -2;
+            /* Set a negative z-index to make sure it's behind the child elements */
+        }
+
+        .services {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            min-height: calc(100vh - 60vh - 130px);
+        }
+
+        .serviceContainer h2 {
+            font-size: 2rem;
+            text-align: center;
+            background-color: #333;
+            padding: 2rem;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: #fff;
+            padding: 2rem;
+            margin: 2rem;
+            width: 500px;
+            background-color: #333;
+            min-height: 200px;
+            line-height: 2;
+        }
+
+        .service h3 {
+            font-size: 1.5rem;
+            margin-bottom: .5rem;
+        }
+
+        .service p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        .service:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #111;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #333;
+            height: 40px;
+            padding: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .about {
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        @media screen and (max-width: 500px){
+            .service {
+                width: 100%;
+                line-height: 1.5;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 10px 5px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.3rem;
+            }
+
+            .serviceContainer {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div></div>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Arkela Technologies</h1>
+        <p>We design and develop mobile and web applications tailored to your business needs.</p>
+    </section>
+
+    <main>
+        <section id="services" class="serviceContainer">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>App Development</h3>
+                    <p>We specialize in designing and building custom applications for both mobile and web platforms. Our app development process includes concept development, prototyping, design, coding, testing, and deployment. We work with you to identify the features and functionality required for your app, and ensure that it is user-friendly and meets industry standards for security, scalability, and performance.</p>
+                </div>
+                <div class="service">
+                    <h3>IT Support</h3>
+                    <p>Our IT support services ensure that your organization's technology infrastructure is always up and running smoothly. We provide technical assistance to resolve issues with hardware, software, and network connectivity, and monitor your systems to detect potential problems before they cause major issues.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Arkela Technologies. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
